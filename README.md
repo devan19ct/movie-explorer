@@ -77,4 +77,4 @@ npm run build
 
 ## 🧠 Author
 
-Built with ❤️ by @devan19ct ([Coffin](https://github.com/devan19ct))
+Built with ❤️ by [Coffin](https://github.com/devan19ct)
