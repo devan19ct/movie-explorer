@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
+import HeroBanner from './HeroMovie';
 
 
 
@@ -9,7 +10,7 @@ export default function APP(){
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-     async function fetchMovies() {
+      async function fetchMovies() {
       const url = searchQuery
       ? `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(searchQuery)}`
       : `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
@@ -31,9 +32,9 @@ export default function APP(){
 
   return(
     <div className='bg-black min-h-screen text-white'>
-    <h1 className="text-4xl font-bold text-center p-8">
-        Movie Explorer
-      </h1>
+
+      {movies.length > 0 && <HeroBanner movie={movies[0]} />}
+      
       <SearchBar onSearchChange={setSearchQuery} /> <br />
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-8">
         {movies.map(movie => (
