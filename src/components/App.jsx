@@ -5,7 +5,7 @@ import HeroBanner from './HeroMovie';
 
 
 export default function APP(){
-  const API_KEY = '07a172069dec265e59987eba17a06ad2'
+  const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
